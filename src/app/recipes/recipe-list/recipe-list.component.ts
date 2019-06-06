@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,21 +9,19 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+  //@Output() recipeWasSelected = new EventEmitter<Recipe>();
 
   //list of models
-  recipes: Recipe[] = [
-    new Recipe('Pasta', 'This is a pasta italiana', 'https://img.pixers.pics/pho_wat(s3:700/FO/49/08/33/96/700_FO49083396_3fdc1e0782a0bd15e2f7e9f47efbce20.jpg,700,467,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,417,jpg)/wall-murals-pasta-italiana-spaghetti-al-pomodoro.jpg.jpg'),
-    new Recipe('Pizza', 'This is a pizza italiana', 'https://dafrancoacapulco.com/wp-content/uploads/2018/06/pizza-italliana-acapulco-1020x731.jpg')
-  ];
+  recipes: Recipe[];
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.recipes = this.recipeService.getRecipes();
   }
 
-  onRecipeSelected(recipe: Recipe) {
-    this.recipeWasSelected.emit(recipe);
-  }
+  // onRecipeSelected(recipe: Recipe) {
+  //   this.recipeWasSelected.emit(recipe);
+  // }
 
 }
