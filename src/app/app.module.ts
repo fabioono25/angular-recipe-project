@@ -19,6 +19,7 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
 import { RepeatPipe } from './repeat.pipe';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { RepeatPipe } from './repeat.pipe';
       DropdownDirective,
       RecipeStartComponent,
       RecipeEditComponent,
-      RepeatPipe
+      RepeatPipe,
+      AuthComponent
    ],
    imports: [
       BrowserModule,
