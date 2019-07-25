@@ -20,6 +20,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipeService } from './recipes/recipe.service';
 import { RepeatPipe } from './repeat.pipe';
 import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AuthComponent } from './auth/auth.component';
       RecipeStartComponent,
       RecipeEditComponent,
       RepeatPipe,
-      AuthComponent
+      AuthComponent,
+      LoadingSpinnerComponent
    ],
    imports: [
       BrowserModule,
